@@ -18,7 +18,7 @@ print.progressBar <- function(object){
     n_finish = round(object$actual/object$length*object$width)
     n_remain = object$width - n_finish - 1
     
-    t_remain = round(as.numeric((Sys.time() - object$t_init)/n_finish * (n_remain+1)))
+    t_remain = round(as.numeric((Sys.time() - object$t_init))/n_finish * (n_remain+1))
     t_remain = paste0(formatC(t_remain %/% 3600,width = 2,flag = 0),
                       ":",
                       formatC(t_remain %% 3600 %/% 60,width = 2,flag = 0),
