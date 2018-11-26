@@ -5,7 +5,7 @@
 #' @seealso \code{\link{progressBar}}
 #'
 #' @export
-show.progressBar <- function(progress){
+print.progressBar <- function(progress,...){
   
   .args <- as.list(match.call())
   .calling_env <- parent.env(environment())
