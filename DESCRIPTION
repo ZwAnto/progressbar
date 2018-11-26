@@ -1,0 +1,12 @@
+Package: progressbar
+Type: Package
+Title: Execution progression
+Version: 1.0
+Date: 2018-11-26
+Author: ZwAnto [aut,cre]
+Maintainer: ZwAnto <antoine.hamon22@gmail.com>
+Description: Show a progress bar
+License: GPL-2
+Imports:
+    utils
+RoxygenNote: 6.1.1
