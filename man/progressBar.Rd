@@ -32,7 +32,7 @@ pb = progressBar(min = 0, max = total)
 
 for(i in 0:total){
   Sys.sleep(0.1)
-  show(pb)                    
+  print(pb)                    
 }
 
 }

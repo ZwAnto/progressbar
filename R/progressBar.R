@@ -17,7 +17,7 @@
 #' 
 #' for(i in 0:total){
 #'   Sys.sleep(0.1)
-#'   show(pb)                    
+#'   print(pb)                    
 #' }
 #' 
 progressBar <- function(min = 0,max = 100,width = 30,refresh = 0.5,envir=parent.frame(1),output = stderr){

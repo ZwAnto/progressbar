@@ -5,7 +5,7 @@
 #' @seealso \code{\link{progressBar}}
 #'
 #' @export
-show.progressBar <- function(object){
+print.progressBar <- function(object){
   
   .args <- as.list(match.call())
   .progress_name <- paste(.args$object)
