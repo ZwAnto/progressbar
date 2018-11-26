@@ -11,8 +11,6 @@ show.progressBar <- function(object){
   .calling_env <- parent.env(environment())
   .progress_name <- paste(.args$object)
   
-  print(.args)
-  print(.progress_name)
   t_update = Sys.time() - object$t_update
   
   if(t_update > object$refresh) {
