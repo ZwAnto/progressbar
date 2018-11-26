@@ -4,7 +4,8 @@
 \alias{progressBar}
 \title{Console Progress Bar}
 \usage{
-progressBar(min = 0, max = 100, width = 30, refresh = 0.5)
+progressBar(min = 0, max = 100, width = 30, refresh = 0.5,
+  envir = parent.frame(1), output = stderr)
 }
 \arguments{
 \item{min}{Startint value of iteration.}
@@ -14,6 +15,10 @@ progressBar(min = 0, max = 100, width = 30, refresh = 0.5)
 \item{width}{Width of the progress bar.}
 
 \item{refresh}{Minimum refreshing time in seconds.}
+
+\item{envir}{Environment of progressBar object}
+
+\item{output}{Where to print progress bar. Default to stderr()}
 }
 \value{
 Object of class progressBar

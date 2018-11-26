@@ -5,6 +5,8 @@
 #' @param max Ending value of iteration.
 #' @param width Width of the progress bar.
 #' @param refresh Minimum refreshing time in seconds.
+#' @param envir Environment of progressBar object
+#' @param output Where to print progress bar. Default to stderr()
 #'
 #' @return Object of class progressBar
 #' @export
@@ -18,14 +20,15 @@
 #'   show(pb)                    
 #' }
 #' 
-progressBar <- function(min = 0, max = 100, width = 30, refresh = 0.5, envir=environment()){
+progressBar <- function(min = 0,max = 100,width = 30,refresh = 0.5,envir=parent.frame(1),output = stderr){
   progress <- list(length = length(min:max),
                    actual = 1,
                     width = 30,
                     t_init = Sys.time(),
                     t_update = Sys.time(),
                     refresh = refresh,
-                   envir = envir)
+                   envir = envir,
+                   output=output)
   attr(progress, "class") <- "progressBar"
   return(progress)
 }

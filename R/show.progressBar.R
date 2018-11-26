@@ -8,8 +8,8 @@
 show.progressBar <- function(object){
   
   .args <- as.list(match.call())
-  .calling_env <- object$envir
   .progress_name <- paste(.args$object)
+  .calling_env <- object$envir
   
   t_update = Sys.time() - object$t_update
   
@@ -36,12 +36,12 @@ show.progressBar <- function(object){
     text_bar <- paste0('[', text_bar,']')
     text_bar <- paste0(object$actual,'/',object$length,' ',text_bar,' ETA ',  t_remain)
     
-    cat("\r",text_bar, sep = "",file = stderr())
+    cat("\r",text_bar, sep = "",file = object$output())
     utils::flush.console() 
     
     object$t_update <- Sys.time()
   }
   
-  object$actual <- object$actual + 1
-  assign(.progress_name,value = object,envir = .calling_env)
+  .calling_env[[.progress_name]]$actual <- object$actual + 1
+  
 }
