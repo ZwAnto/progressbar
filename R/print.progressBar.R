@@ -18,12 +18,13 @@ print.progressBar <- function(object){
     n_finish = round(object$actual/object$length*object$width)
     n_remain = object$width - n_finish - 1
     
-    t_remain = as.numeric((Sys.time() - object$t_init))/n_finish * (n_remain+1)
+    t_remain = as.numeric(t_update)/n_finish * (n_remain+1)
+    if (is.infinite(t_remain)) t_remain <- 0
     t_remain = paste0(formatC(t_remain %/% 3600,width = 2,flag = 0),
                       ":",
                       formatC(t_remain %% 3600 %/% 60,width = 2,flag = 0),
                       ":",
-                      formatC(t_remain %% 3600 %% 60,width = 2,flag = 0,digits=0))
+                      formatC(as.integer(t_remain %% 3600 %% 60),width = 2,flag = 0,digits=0))
     
     if (n_remain>0){
       text_bar = paste0(paste0(rep('=',n_finish),collapse = ''),'>',paste0(rep('.',n_remain),collapse = ''))
