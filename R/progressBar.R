@@ -18,13 +18,14 @@
 #'   show(pb)                    
 #' }
 #' 
-progressBar <- function(min = 0, max = 100, width = 30, refresh = 0.5){
+progressBar <- function(min = 0, max = 100, width = 30, refresh = 0.5, envir=environment()){
   progress <- list(length = length(min:max),
                    actual = 1,
                     width = 30,
                     t_init = Sys.time(),
                     t_update = Sys.time(),
-                    refresh = refresh)
+                    refresh = refresh,
+                   envir = envir)
   attr(progress, "class") <- "progressBar"
   return(progress)
 }

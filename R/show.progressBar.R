@@ -8,7 +8,7 @@
 show.progressBar <- function(object){
   
   .args <- as.list(match.call())
-  .calling_env <- parent.env(environment())
+  .calling_env <- object$envir
   .progress_name <- paste(.args$object)
   
   t_update = Sys.time() - object$t_update
