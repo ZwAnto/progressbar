@@ -43,12 +43,11 @@ for (i in min:max){
 ```r
 library(progressbar)
 
-max = 20
-min = 1
+vect = 1:20
 
-pb = progressBar(min=min,max=max) # progress bar initialization
+pb = progressBar(min = 1, max = length(vect)) # progress bar initialization
 
-apply(1:20,function(x){
+apply(vect,function(x){
 
   # Your expressions
   Sys.sleep(runif(n = 1,min = 0.2,max = 1))
