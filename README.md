@@ -56,3 +56,19 @@ lapply(vect,function(x){
   print(pb) # Refresh the progress bar
 })
 ```
+
+## Arguments
+
+### `refresh`
+
+The `refresh` argument allow you to specify the refresh rate in seconds.  
+The progress bar is refresh every loop if one loop take more time than the value of the `refresh` argument. Otherwise it will be refresh base on the value of the `refresh` argument.
+
+### `òutput`
+
+By default the progress bar is output to `stderr()`. You can change this using the `output` argument.  
+For exemple, if you want to output to `stdout()` instead:
+
+```r
+pb = progressBar(..., output = stdout)
+```
