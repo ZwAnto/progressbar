@@ -47,7 +47,7 @@ vect = 1:20
 
 pb = progressBar(min = 1, max = length(vect)) # progress bar initialization
 
-apply(vect,function(x){
+lapply(vect,function(x){
 
   # Your expressions
   Sys.sleep(runif(n = 1,min = 0.2,max = 1))
