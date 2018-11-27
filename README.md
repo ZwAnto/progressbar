@@ -62,7 +62,7 @@ lapply(vect,function(x){
 ### `refresh`
 
 The `refresh` argument allow you to specify the refresh rate in seconds.  
-The progress bar is refresh every loop if one loop take more time than the value of the `refresh` argument. Otherwise it will be refresh base on the value of the `refresh` argument.
+The progress bar is refresh every loop if one loop take more time than the value of the `refresh` argument. Otherwise it will be refresh according to the value of the `refresh` argument.
 
 ### `òutput`
 
