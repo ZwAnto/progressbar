@@ -1,5 +1,4 @@
 # `progressbar` Package
-***
   
 This package allow R user to simply monitor loop execution (apply,for).
 
