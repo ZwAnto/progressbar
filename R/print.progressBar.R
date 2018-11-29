@@ -18,8 +18,8 @@ print.progressBar <- function(object){
     n_finish = round(object$actual/object$length*object$width)
     n_remain = object$width - n_finish - 1
     
-    t_remain = as.numeric(Sys.time() - object$t_init)/object$actual * (object$length-object$actual)
-    
+    t_remain = as.numeric(difftime(Sys.time(),object$t_init,units = 's'))/object$actual * (object$length-object$actual)
+
     if (is.infinite(t_remain)) t_remain <- 0
     t_remain = paste0(formatC(t_remain %/% 3600,width = 2,flag = 0),
                       ":",
@@ -41,7 +41,7 @@ print.progressBar <- function(object){
     cat("\r",text_bar, sep = "",file = object$output())
     utils::flush.console() 
     
-    object$t_update <- Sys.time()
+    .calling_env[[.progress_name]]$t_update <- Sys.time()
   }
   
   .calling_env[[.progress_name]]$actual <- object$actual + 1
